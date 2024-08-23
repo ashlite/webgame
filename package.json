@@ -1,35 +1,46 @@
 {
   "name": "my-app",
   "version": "0.0.1",
+  "devDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.21.0",
+    "@skeletonlabs/skeleton": "^2.10.2",
+    "@skeletonlabs/tw-plugin": "^0.4.0",
+    "@sveltejs/adapter-auto": "^3.2.4",
+    "@sveltejs/kit": "^2.5.24",
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "@types/eslint": "^9.6.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.43.0",
+    "globals": "^15.9.0",
+    "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
+    "prettier-plugin-svelte": "^3.2.6",
+    "svelte": "^4.2.19",
+    "svelte-check": "^3.8.6",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.2.0",
+    "vite": "^5.4.2"
+  },
   "private": true,
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
+    "dev": "bun --bun run vite dev",
+    "build": "bun --bun run vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "push": "npm patch && git push",
+    "push-minor": "npm patch-minor && git push",
+    "push-major": "npm patch-major && git push"
   },
-  "devDependencies": {
-    "@sveltejs/adapter-auto": "^3.0.0",
-    "@sveltejs/kit": "^2.0.0",
-    "@sveltejs/vite-plugin-svelte": "^3.0.0",
-    "@types/eslint": "^9.6.0",
-    "eslint": "^9.0.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.36.0",
-    "globals": "^15.0.0",
-    "prettier": "^3.1.1",
-    "prettier-plugin-svelte": "^3.1.2",
-    "svelte": "^4.2.7",
-    "svelte-check": "^3.6.0",
-    "typescript": "^5.0.0",
-    "typescript-eslint": "^8.0.0",
-    "vite": "^5.0.3"
-  },
-  "type": "module",
   "trustedDependencies": [
+    "@sveltejs/kit",
+    "esbuild",
     "svelte-preprocess"
-  ]
+  ],
+  "type": "module"
 }
